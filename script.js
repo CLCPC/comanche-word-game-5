@@ -93,18 +93,21 @@ window.addEventListener('DOMContentLoaded', () => {
 
     results.push(rowResult);
 
-    if (currentGuess.join('') === secretWord) {
-      showMessage("Tsaaku ʉnʉ̠!\nYou got it!");
+    if (guess === secretWord) {
+      showMessage("Tsaaku ʉnʉ̠!
+You got it!");
       shareButton.style.display = "inline-block";
       const guessCount = currentRow + 1;
       shareButton.onclick = () => {
         const header = `Comanche Word Game 5 - ${guessCount}/${MAX_GUESSES}`;
-        const full = `${header}\n${results.join('\n')}`;
+        const full = `${header}
+${results.join('
+')}`;
         navigator.clipboard.writeText(full);
         alert("Score copied to clipboard!");
       };
     } else if (currentRow === MAX_GUESSES - 1) {
-      showMessage('The word was: ' + secretArray.join(''));
+      showMessage('The word was: ' + secretWord);
     }
 
     currentRow++;
