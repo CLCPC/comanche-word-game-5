@@ -93,7 +93,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     results.push(rowResult);
 
-    if (guess === secretArray.join('')) {
+    if (currentGuess.join('') === secretWord) {
       showMessage("Tsaaku ʉnʉ̠!\nYou got it!");
       shareButton.style.display = "inline-block";
       const guessCount = currentRow + 1;
